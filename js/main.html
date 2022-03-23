@@ -1,0 +1,53 @@
+
+function animateNumber(finalNumber, delay, startNumber = 0, callback) {
+    let currentNumber = startNumber
+    const interval = window.setInterval(updateNumber, delay)
+
+    function updateNumber() {
+        if (currentNumber >= finalNumber) {
+            clearInterval(interval)
+        } else {
+            currentNumber++
+            callback(currentNumber)
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    animateNumber(50000000, 1, 10249357, function (number) {
+        const formattedNumber = number.toLocaleString()
+        document.getElementById('transaction-count').innerText = formattedNumber
+    })
+    animateNumber(20000000, 1, 3159645, function (number) {
+        const formattedNumber = number.toLocaleString()
+        document.getElementById('customer-count').innerText = formattedNumber
+    })
+})
+
+// ss5
+$(function() {
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		this.multiple = multiple || false;
+
+		// Variables privadas
+		var links = this.el.find('.link');
+		// Evento
+		links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+	}
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el;
+			$this = $(this),
+			$next = $this.next();
+
+		$next.slideToggle();
+		$this.parent().toggleClass('open');
+
+		if (!e.data.multiple) {
+			$el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+		};
+	}	
+
+	var accordion = new Accordion($('#accordion'), false);
+});

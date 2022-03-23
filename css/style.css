@@ -316,13 +316,12 @@ footer img{
     height: 40px;
     margin-top:40px;
 }
-.footer-content  .col-9 h4::after{
-    content: '';
-        border-top: 40px solid #ac731c;
-        border-right: 40px solid transparent;
-        position: relative;
-        left: 7px;
-        top: 38px;
+.after-name {
+    border-top: 40px solid #ac731c;
+    border-right: 40px solid transparent;
+    position: absolute;
+    left: 215px;
+    top: 40px;
 }
 .footer-content  .col-9 .class{
     margin-left: 65px;
@@ -330,6 +329,7 @@ footer img{
 .footer-content  .col-9 .phone{
     margin-left: 50px;
 }
+
 .fa-facebook{
     font-size: 40px;
     color: black;
